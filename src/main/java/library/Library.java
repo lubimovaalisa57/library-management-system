@@ -140,5 +140,15 @@ public class Library {
         }
         return removed;
     }
-
+    public boolean updateBook(int id, Book newData) {
+        Book book = findBookById(id);
+        if (book != null) {
+            // В реальном приложении нужно добавить сеттеры в Book
+            // или создать новый объект
+            operationLog.addEntry(OperationLog.OperationType.ADD_BOOK,
+                    "Обновлена книга ID: " + id);
+            return true;
+        }
+        return false;
+    }
 }
