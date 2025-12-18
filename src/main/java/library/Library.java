@@ -132,5 +132,13 @@ public class Library {
         return String.format("Всего книг: %d, Доступно: %d, Выдано: %d",
                 total, available, borrowed);
     }
+    public boolean removeBook(int id) {
+        boolean removed = books.removeIf(book -> book.getId() == id);
+        if (removed) {
+            operationLog.addEntry(OperationLog.OperationType.ADD_BOOK,
+                    "Удалена книга ID: " + id);
+        }
+        return removed;
+    }
 
 }
