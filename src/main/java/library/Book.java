@@ -8,6 +8,7 @@ public class Book {
     private String isbn;
     private boolean available;
 
+    // Конструктор
     public Book(int id, String title, String author, int year, String isbn) {
         this.id = id;
         this.title = title;
@@ -17,17 +18,37 @@ public class Book {
         this.available = true;
     }
 
-    public int getId() { return id; }
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public int getYear() { return year; }
-    public String getIsbn() { return isbn; }
-    public boolean isAvailable() { return available; }
+    // Геттеры
+    public int getId() {
+        return id;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    // Сеттер для статуса доступности
     public void setAvailable(boolean available) {
         this.available = available;
     }
 
+    // Переопределение toString()
     @Override
     public String toString() {
         String status = available ? "Доступна" : "Выдана";
